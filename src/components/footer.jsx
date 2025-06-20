@@ -113,17 +113,17 @@ const Footer = () => {
           {/* Span across 2 columns on larger screens */}
           <h4 className="font-bold mb-4">Reach Us</h4>
           <p className="mb-2">
-            India - Hyderabad, Chennai, Tirupathi, Bangalore
+            India - Anantapur
           </p>
-          <p className="mb-2">US - Bentonville</p>
-          <p>Canada - Ontario</p>
+          {/* <p className="mb-2">US - Bentonville</p>
+          <p>Canada - Ontario</p> */}
         </div>
       </div>
 
       <div className="text-center mt-8 pt-4 border-t border-gray-700">
         {" "}
         {/* Added border-t */}
-        <p>&copy; All Rights Reserved @ Federal Soft Systems Inc 2024</p>
+        <p>&copy; All Rights Reserved @ Nexotra Technologies  2025</p>
         <div className="mt-2 space-x-4">
           <Link to="/privacy" className="hover:text-gray-300">
             Privacy Policy

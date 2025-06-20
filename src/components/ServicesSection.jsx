@@ -39,14 +39,14 @@ const services = [
     title: "Talent Hiring",
     description: "Comprehensive security solutions and consulting",
     backgroundImage: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b",
-    knowmoreLink: "/services/cybersecurity",
+    knowmoreLink: "/services/Talent-Hiring",
   },
   {
     id: 6,
-    title: "DevOps Services",
-    description: "Streamline your development and operations",
-    backgroundImage: "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9",
-    knowmoreLink: <Devops/>,
+    title: "Cybersecurity",
+    description: "Comprehensive security solutions and consulting",
+   backgroundImage:"https://images.unsplash.com/photo-1550751827-4bd374c3f58b",
+    knowmoreLink: "/services/cybersecurity"
   },
 ];
 

@@ -5,12 +5,12 @@ import ProfileData from './components/ProfileCard/ProfileData';
 import Services from "./components/Services";
 import Technologies from "./components/Technologies";
 import Contact from "./components/Contact";
-import Dt from "./components/DigitalTransformationService";
-import FullstackService from "./components/FullstackService";
-import CloudService from "./components/CloudService";
-import CyberSecurityService from "./components/CyberSecurityService";
-import MobileDevelopmentService from "./components/mobileDevelopmentService";
-import AiMachineLearning from "./components/AI&ML";
+import Dt from "./components/DigitalTransformationService.jsx";
+import FullstackService from "./components/FullstackService.jsx";
+import CloudService from "./components/CloudService.jsx";
+import TalentHiring from './components/Talent_Hiring.jsx'
+import MobileDevelopmentService from "./components/mobileDevelopmentService.jsx";
+import AiMachineLearning from "./components/AI&ML.jsx";
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
@@ -26,6 +26,9 @@ import BlogPost from "./components/Insights/BlogPost";
 import TheTeam from "./components/TheTeam";
 import TechGridSection from "./components/TechGrid/TechGridSection";
 import Teamscards from "./components/Teamscards";
+import Cybersecurity from "./components/CyberSecurityService.jsx";
+
+
 function App() {
   return (
     <div className="min-h-screen bg-gray-100">
@@ -62,8 +65,8 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/digital-transformation" element={<Dt />} />
         <Route path="/services/full-stack" element={<FullstackService />} />
-             <Route path="/services/devops" element={<Devops />} />
-        <Route path="/services/cybersecurity"element={<CyberSecurityService />} />
+        <Route path="/services/Talent-Hiring" element={<TalentHiring />} />
+        <Route path="/services/cybersecurity"element={<Cybersecurity />} />
         <Route path="/services/cloud-integration" element={<CloudService />} />
         <Route
           path="/services/mobile-development"

@@ -120,53 +120,53 @@ const techStacks = [
       }
     ]
   },
-  {
-    id: 'devops',
-    title: 'DevOps',
-    description: 'Automating and optimizing the development lifecycle with continuous integration and delivery.',
-    technologies: [
-      {
-        id: 'docker',
-        name: 'Docker',
-        icon: <Boxes size={24} />,
-        description: 'Platform for developing, shipping, and running applications in containers for consistency across environments.',
-        skillLevel: 5,
-        color: 'blue'
-      },
-      {
-        id: 'kubernetes',
-        name: 'Kubernetes',
-        icon: <Boxes size={24} />,
-        description: 'Container orchestration system for automating application deployment, scaling, and management.',
-        skillLevel: 4,
-        color: 'blue'
-      },
-      {
-        id: 'cicd',
-        name: 'CI/CD Pipelines',
-        icon: <Repeat size={24} />,
-        description: 'Automating testing and deployment with tools like GitHub Actions, Jenkins, and GitLab CI.',
-        skillLevel: 5,
-        color: 'green'
-      },
-      {
-        id: 'terraform',
-        name: 'Terraform',
-        icon: <Server size={24} />,
-        description: 'Infrastructure as code tool for building, changing, and versioning infrastructure safely and efficiently.',
-        skillLevel: 4,
-        color: 'purple'
-      },
-      {
-        id: 'monitoring',
-        name: 'Monitoring & Alerting',
-        icon: <LineChart size={24} />,
-        description: 'Implementing comprehensive monitoring solutions with Prometheus, Grafana, and ELK stack.',
-        skillLevel: 4,
-        color: 'red'
-      }
-    ]
-  },
+  // {
+  //   id: 'devops',
+  //   title: 'DevOps',
+  //   description: 'Automating and optimizing the development lifecycle with continuous integration and delivery.',
+  //   technologies: [
+  //     {
+  //       id: 'docker',
+  //       name: 'Docker',
+  //       icon: <Boxes size={24} />,
+  //       description: 'Platform for developing, shipping, and running applications in containers for consistency across environments.',
+  //       skillLevel: 5,
+  //       color: 'blue'
+  //     },
+  //     {
+  //       id: 'kubernetes',
+  //       name: 'Kubernetes',
+  //       icon: <Boxes size={24} />,
+  //       description: 'Container orchestration system for automating application deployment, scaling, and management.',
+  //       skillLevel: 4,
+  //       color: 'blue'
+  //     },
+  //     {
+  //       id: 'cicd',
+  //       name: 'CI/CD Pipelines',
+  //       icon: <Repeat size={24} />,
+  //       description: 'Automating testing and deployment with tools like GitHub Actions, Jenkins, and GitLab CI.',
+  //       skillLevel: 5,
+  //       color: 'green'
+  //     },
+  //     {
+  //       id: 'terraform',
+  //       name: 'Terraform',
+  //       icon: <Server size={24} />,
+  //       description: 'Infrastructure as code tool for building, changing, and versioning infrastructure safely and efficiently.',
+  //       skillLevel: 4,
+  //       color: 'purple'
+  //     },
+  //     {
+  //       id: 'monitoring',
+  //       name: 'Monitoring & Alerting',
+  //       icon: <LineChart size={24} />,
+  //       description: 'Implementing comprehensive monitoring solutions with Prometheus, Grafana, and ELK stack.',
+  //       skillLevel: 4,
+  //       color: 'red'
+  //     }
+  //   ]
+  // },
   {
     id: 'cloud',
     title: 'Cloud',
@@ -214,53 +214,53 @@ const techStacks = [
       }
     ]
   },
-  {
-    id: 'tools',
-    title: 'Tools',
-    description: 'Essential tools and utilities that enhance our development workflow and productivity.',
-    technologies: [
-      {
-        id: 'git',
-        name: 'Git',
-        icon: <GitBranch size={24} />,
-        description: 'Distributed version control system for tracking changes and collaborating on code.',
-        skillLevel: 5,
-        color: 'orange'
-      },
-      {
-        id: 'vscode',
-        name: 'VS Code',
-        icon: <Code size={24} />,
-        description: 'Lightweight but powerful source code editor with extensive ecosystem of extensions.',
-        skillLevel: 5,
-        color: 'blue'
-      },
-      {
-        id: 'npm',
-        name: 'NPM/Yarn',
-        icon: <Folder size={24} />,
-        description: 'Package managers for the JavaScript programming language for dependency management.',
-        skillLevel: 5,
-        color: 'red'
-      },
-      {
-        id: 'jira',
-        name: 'Jira',
-        icon: <Tool size={24} />,
-        description: 'Issue and project tracking tool for agile development teams with customizable workflows.',
-        skillLevel: 4,
-        color: 'blue'
-      },
-      {
-        id: 'figma',
-        name: 'Figma',
-        icon: <PenTool size={24} />,
-        description: 'Collaborative interface design tool for creating UI/UX designs and prototypes.',
-        skillLevel: 4,
-        color: 'purple'
-      }
-    ]
-  }
+  // {
+  //   id: 'tools',
+  //   title: 'Tools',
+  //   description: 'Essential tools and utilities that enhance our development workflow and productivity.',
+  //   technologies: [
+  //     {
+  //       id: 'git',
+  //       name: 'Git',
+  //       icon: <GitBranch size={24} />,
+  //       description: 'Distributed version control system for tracking changes and collaborating on code.',
+  //       skillLevel: 5,
+  //       color: 'orange'
+  //     },
+  //     {
+  //       id: 'vscode',
+  //       name: 'VS Code',
+  //       icon: <Code size={24} />,
+  //       description: 'Lightweight but powerful source code editor with extensive ecosystem of extensions.',
+  //       skillLevel: 5,
+  //       color: 'blue'
+  //     },
+  //     {
+  //       id: 'npm',
+  //       name: 'NPM/Yarn',
+  //       icon: <Folder size={24} />,
+  //       description: 'Package managers for the JavaScript programming language for dependency management.',
+  //       skillLevel: 5,
+  //       color: 'red'
+  //     },
+  //     {
+  //       id: 'jira',
+  //       name: 'Jira',
+  //       icon: <Tool size={24} />,
+  //       description: 'Issue and project tracking tool for agile development teams with customizable workflows.',
+  //       skillLevel: 4,
+  //       color: 'blue'
+  //     },
+  //     {
+  //       id: 'figma',
+  //       name: 'Figma',
+  //       icon: <PenTool size={24} />,
+  //       description: 'Collaborative interface design tool for creating UI/UX designs and prototypes.',
+  //       skillLevel: 4,
+  //       color: 'purple'
+  //     }
+  //   ]
+  // }
 ];
 
 const TechStackPage: React.FC = () => {

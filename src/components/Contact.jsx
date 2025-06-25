@@ -1,12 +1,62 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Mail, MapPin, Phone, Clock, Users, Code2 } from 'lucide-react';
+import { Mail, Clock, Users, Code2, Send, CheckCircle } from 'lucide-react';
+import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
 
 export default function Contact() {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    message: ''
   });
+  const [submitted, setSubmitted] = useState(false);
+
+ const handleChange = (e) => {
+  const { name, value } = e.target;
+  setFormData(prev => ({ ...prev, [name]: value }));
+};
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const templateParams = {
+      name: formData.firstName + ' ' + formData.lastName,
+      email: formData.email,
+      phone: formData.phone,
+      message: formData.message,
+      title: 'New Inquiry from Nexotra Website'
+    };
+
+    emailjs
+      .send(
+        'service_e1x53s8',
+        'template_h9nk8i5',
+        templateParams,
+        'y6x3Wp11pz-Wo0FMp'
+      )
+      .then(
+        () => {
+          setSubmitted(true);
+          setTimeout(() => {
+            setFormData({
+              firstName: '',
+              lastName: '',
+              email: '',
+              phone: '',
+              message: ''
+            });
+            setSubmitted(false);
+          }, 1000);
+        },
+        (error) => {
+          console.error('Email sending failed:', error);
+        }
+      );
+  };
 
   const services = [
     {
@@ -72,68 +122,99 @@ export default function Contact() {
                 <p className="text-gray-400">Support@nexotra.com</p>
               </div>
             </div>
-            {/* <div className="flex items-center space-x-4">
-              <Phone className="text-blue-400" size={24} />
-              <div>
-                <h3 className="text-xl font-semibold">Phone</h3>
-                <p className="text-gray-400">+1 (555) 123-4567</p>
-              </div>
-            </div>
-            <div className="flex items-center space-x-4">
-              <MapPin className="text-blue-400" size={24} />
-              <div>
-                <h3 className="text-xl font-semibold">Location</h3>
-                <p className="text-gray-400">Silicon Valley, CA</p>
-              </div>
-            </div> 
-            
-             <motion.form
+          </motion.div>
+
+          <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="space-y-6"
           >
-            <div>
-              <input
-                type="text"
-                placeholder="Your Name"
-                className="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg focus:outline-none focus:border-blue-400 transition-colors"
-              />
-            </div>
-            <div>
-              <input
-                type="email"
-                placeholder="Your Email"
-                className="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg focus:outline-none focus:border-blue-400 transition-colors"
-              />
-            </div>
-            <div>
-              <select className="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg focus:outline-none focus:border-blue-400 transition-colors text-gray-400">
-                <option value="">Select Service</option>
-                <option value="custom">Custom Development</option>
-                <option value="team">Team Augmentation</option>
-                <option value="support">Technical Support</option>
-              </select>
-            </div>
-            <div>
-              <textarea
-                placeholder="Tell us about your project"
-                rows={4}
-                className="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg focus:outline-none focus:border-blue-400 transition-colors"
-              ></textarea>
-            </div>
-            <button
-              type="submit"
-              className="w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-            >
-              Let's Discuss Your Project
-            </button>
-          </motion.form>
-            
-            */}
-          </motion.div>
+            {submitted ? (
+              <div className="bg-green-50 border border-green-200 rounded-lg p-8 text-center text-black">
+                <CheckCircle className="mx-auto mb-4 text-green-500" size={48} />
+                <h3 className="text-2xl font-semibold mb-2 text-green-800">Message Sent!</h3>
+                <p className="text-green-700">
+                  Thank you for reaching out to Nexotra. We’ll be in touch soon.
+                </p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-lg p-8 space-y-6 text-black">
+                <div className="flex gap-4">
+                  <div className="w-1/2">
+                    <label className="block text-gray-700 font-medium mb-2">First Name</label>
+                    <input
+                      type="text"
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleChange}
+                      required
+                      placeholder="John"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-md"
+                    />
+                  </div>
+                  <div className="w-1/2">
+                    <label className="block text-gray-700 font-medium mb-2">Last Name</label>
+                    <input
+                      type="text"
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleChange}
+                      required
+                      placeholder="Doe"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-md"
+                    />
+                  </div>
+                </div>
 
-         
+                <div>
+                  <label className="block text-gray-700 font-medium mb-2">Email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    placeholder="you@example.com"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-md"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-gray-700 font-medium mb-2">Phone</label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    required
+                    placeholder="+91 1234567890"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-md"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-gray-700 font-medium mb-2">Your Needs</label>
+                  <textarea
+                    name="message"
+                    rows={5}
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    placeholder="Tell us about your project or requirements"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-md"
+                  ></textarea>
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-md flex items-center justify-center transition-all"
+                >
+                  <span>Start the Conversation</span>
+                  <Send size={18} className="ml-2" />
+                </button>
+              </form>
+            )}
+          </motion.div>
         </div>
       </motion.div>
     </div>

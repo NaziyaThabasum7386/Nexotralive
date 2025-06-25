@@ -185,23 +185,7 @@ function Cybersecurity() {
           transition={{ duration: 0.8 }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20"
         >
-          {[
-            { number: "99.9%", label: "Threat Detection Rate" },
-            { number: "24/7", label: "Active Monitoring" },
-            { number: "100+", label: "Security Experts" },
-            { number: "<1hr", label: "Response Time" },
-          ].map((stat, index) => (
-            <motion.div
-              key={index}
-              whileHover={{ scale: 1.05 }}
-              className="bg-blue-800 bg-opacity-50 p-6 rounded-xl text-center"
-            >
-              <h3 className="text-3xl font-bold text-blue-400 mb-2">
-                {stat.number}
-              </h3>
-              <p className="text-blue-100">{stat.label}</p>
-            </motion.div>
-          ))}
+        
         </motion.div>
 
         {/* Security Process */}

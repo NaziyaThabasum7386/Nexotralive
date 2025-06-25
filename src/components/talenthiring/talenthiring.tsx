@@ -37,7 +37,7 @@ const TalentHiring: React.FC = () => {
         <Hero />
         <Services />
         <About />
-        <Contact />
+        {/* <Contact /> */}
       </main>
     </div>
   );

@@ -142,12 +142,11 @@ function AiMachineLearning() {
           >
             AI Applications
           </motion.h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="flex flex-cols-2 justify-center md:grid-cols-4 gap-8">
             {[
               { metric: "98%", label: "Accuracy Rate" },
               { metric: "10x", label: "Faster Processing" },
               { metric: "24/7", label: "Automated Operations" },
-              { metric: "60%", label: "Cost Reduction" }
             ].map((stat, index) => (
               <motion.div
                 key={index}

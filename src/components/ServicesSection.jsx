@@ -72,7 +72,7 @@ const CustomLeftArrow = ({ onClick }) => (
     aria-label="Previous Slide"
   >
     <svg
-      className="w-8 h-4"
+      className="w-4 h-4"
       fill="none"
       stroke="currentColor"
       strokeWidth="2"
